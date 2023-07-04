@@ -6,16 +6,17 @@ import PackageDescription
 let package = Package(
     name: "MKPlayer",
     platforms: [
-        .iOS(.v14)
+        .iOS(.v14),
+        .tvOS(.v14)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "AdvancedFramework", targets: ["AdvancedFrameworkPackage"]),
+            name: "MKPlayer",
+            targets: ["MKPlayerPackage"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/bitmovin/player-ios.git",
-                    exact:"3.40.0"),
+        .package(url: "https://github.com/mkplayer-ios/OMSDK_Mediakind.git", exact: "0.0.2"),
         .package(url: "https://github.com/bitmovin/player-ios-core.git",
                     exact:"3.40.0"),
         .package(url: "https://github.com/bitmovin/bitmovin-analytics-collector-ios",
@@ -23,17 +24,30 @@ let package = Package(
     ],
     
     targets: [
-        .target(name: "AdvancedFrameworkPackage",
-                dependencies: [ "AdvancedFramework", "GoogleCast",
+        .target(name: "MKPlayerPackage",
+                dependencies: [ "Alamofire", "MKPlayer", "asid_ott_sdk",
+                    .target(name: "GoogleCast",condition: .when(platforms: [.iOS])),
+                                .product(name: "OMSDK_Mediakind", package: "OMSDK_Mediakind",condition: .when(platforms: [.iOS])),
+                            
                     .product(name: "BitmovinPlayerCore", package: "player-ios-core"),
-                    .product(name: "BitmovinCollector", package: "bitmovin-analytics-collector-ios"),
-                    .product(name: "BitmovinPlayer", package: "player-ios")
+                    .product(name: "BitmovinCollector", package: "bitmovin-analytics-collector-ios")
                     ],
                 cSettings: [
                     .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "YES")
                 ]
         ),
-        .binaryTarget(name:"AdvancedFramework", url: "https://mkplayer.blob.core.windows.net/$web/ios_tvos_rc_build/AdvancedFramework.zip", checksum: "7d1790e1089374e9a2e55027b0e29053a8122ac33bc4b13257f6714bfe68ca54"),
-        .binaryTarget(name: "GoogleCast", path: "./GoogleCast.xcframework")
+        .binaryTarget(name:"MKPlayer" , url: "https://mkplayer.blob.core.windows.net/$web/ios_tvos_rc_build/MKPlayer-1.3.2-rc.1.zip", checksum: "635927df007ee4d925094bcd15da96a1aa827758aa750fc532179a0bb2eee3e4"),
+        .binaryTarget(
+          name: "GoogleCast",
+          path: "./GoogleCast.xcframework"
+        ),
+        .binaryTarget(
+          name: "asid_ott_sdk",
+          path: "./asid_ott_sdk.xcframework"
+        ),
+        .binaryTarget(
+          name: "Alamofire",
+          path: "./Alamofire.xcframework"
+        ),
     ]
 )
