@@ -25,7 +25,7 @@ let package = Package(
     
     targets: [
         .target(name: "AdvancedFrameworkPackage",
-                dependencies: [ "AdvancedFramework",
+                dependencies: [ "AdvancedFramework", "GoogleCast",
                     .product(name: "BitmovinPlayerCore", package: "player-ios-core"),
                     .product(name: "BitmovinPlayer", package: "player-ios"),
                     .product(name: "BitmovinCollector", package: "bitmovin-analytics-collector-ios")
@@ -35,5 +35,6 @@ let package = Package(
                 ]
         ),
         .binaryTarget(name:"AdvancedFramework", url: "https://mkplayer.blob.core.windows.net/$web/ios_tvos_rc_build/AdvancedFramework.zip", checksum: "29345eb70b9ac05e9f4d1730329c55d9621bf894c4a835c950cccc5cd96454e8"),
+        .binaryTarget(name: "GoogleCast", path: "./GoogleCast.xcframework")
     ]
 )
