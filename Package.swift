@@ -26,7 +26,6 @@ let package = Package(
     targets: [
         .target(name: "MKPlayerPackage",
                 dependencies: [ "Alamofire", "MKPlayer", "asid_ott_sdk",
-                    .target(name: "GoogleCast",condition: .when(platforms: [.iOS])),
                                 .product(name: "OMSDK_Mediakind", package: "OMSDK_Mediakind",condition: .when(platforms: [.iOS])),
                             
                     .product(name: "BitmovinPlayerCore", package: "player-ios-core"),
@@ -37,10 +36,6 @@ let package = Package(
                 ]
         ),
         .binaryTarget(name:"MKPlayer" , url: "https://mkplayer.blob.core.windows.net/$web/ios_tvos_rc_build/MKPlayer-1.3.2-rc.1.zip", checksum: "635927df007ee4d925094bcd15da96a1aa827758aa750fc532179a0bb2eee3e4"),
-        .binaryTarget(
-          name: "GoogleCast",
-          path: "./GoogleCast.xcframework"
-        ),
         .binaryTarget(
           name: "asid_ott_sdk",
           path: "./asid_ott_sdk.xcframework"
