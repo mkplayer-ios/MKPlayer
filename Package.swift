@@ -34,7 +34,7 @@ let package = Package(
                     .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "YES")
                 ]
         ),
-        .binaryTarget(name:"AdvancedFramework", url: "https://mkplayer.blob.core.windows.net/$web/ios_tvos_rc_build/AdvancedFramework.zip", checksum: "29345eb70b9ac05e9f4d1730329c55d9621bf894c4a835c950cccc5cd96454e8"),
+        .binaryTarget(name:"AdvancedFramework", url: "https://mkplayer.blob.core.windows.net/$web/ios_tvos_rc_build/AdvancedFramework-1.zip", checksum: "9c50fde9517f904bd72fc825772f045c214e81aad02f6e0c8d76a599b8f3711c"),
         .binaryTarget(name: "GoogleCast", path: "./GoogleCast.xcframework")
     ]
 )
