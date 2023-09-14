@@ -11,7 +11,7 @@
 #ifdef __OBJC__
 
 // Add all required headers from the binary framework.
-//#import <AdvancedFramework/AdvancedFramework-Swift.h>
+#import <MKPlayer/MKPlayer-Swift.h>
 
 #endif
 
