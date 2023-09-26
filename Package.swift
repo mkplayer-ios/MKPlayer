@@ -13,7 +13,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "MKPlayer",
-            targets: ["MKPlayerPackage"]),
+            targets: ["MKPlayerPackage", "MKPlayer"]),
     ],
     dependencies: [
         .package(url: "https://github.com/bitmovin/player-ios.git",
@@ -25,16 +25,15 @@ let package = Package(
     
     targets: [
         .target(name: "MKPlayerPackage",
-                dependencies: [ "MKPlayer",
-                    .product(name: "BitmovinPlayer", package: "player-ios"),
-                    .product(name: "BitmovinCollector", package: "bitmovin-analytics-collector-ios"),
-                    .product(name: "Alamofire", package: "Alamofire")
+                dependencies: [ .product(name: "BitmovinPlayer", package: "player-ios"),
+                                .product(name: "BitmovinCollector", package: "bitmovin-analytics-collector-ios"),
+                                .product(name: "Alamofire", package: "Alamofire")
                     ],
                 cSettings: [
                     .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "YES"),
                     .define("EXCLUDED_ARCHS[sdk=*simulator*]", to: "arm64", .when(platforms: [.iOS,.tvOS]))
                 ]
         ),
-        .binaryTarget(name:"MKPlayer" , url: "#ZIPURL#", checksum: "#CHECKSUM#")
+        .binaryTarget(name:"MKPlayer" , url: "https://mkplayer.z13.web.core.windows.net/ios_tvos/MKPlayer-1.7.1-a.zip", checksum: "3b29cc553ac064c138cd200ac7e9d2cabbe9c5cd8dac01c815c688daed29ad60")
     ]
 )
