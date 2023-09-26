@@ -13,7 +13,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "MKPlayer",
-            targets: ["MKPlayerPackage"]),
+            targets: ["MKPlayerPackage", "MKPlayer"]),
     ],
     dependencies: [
         .package(url: "https://github.com/bitmovin/player-ios.git",
@@ -25,10 +25,9 @@ let package = Package(
     
     targets: [
         .target(name: "MKPlayerPackage",
-                dependencies: [ "MKPlayer",
-                    .product(name: "BitmovinPlayer", package: "player-ios"),
-                    .product(name: "BitmovinCollector", package: "bitmovin-analytics-collector-ios"),
-                    .product(name: "Alamofire", package: "Alamofire")
+                dependencies: [ .product(name: "BitmovinPlayer", package: "player-ios"),
+                                .product(name: "BitmovinCollector", package: "bitmovin-analytics-collector-ios"),
+                                .product(name: "Alamofire", package: "Alamofire")
                     ],
                 cSettings: [
                     .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "YES"),
