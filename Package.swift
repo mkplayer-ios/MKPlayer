@@ -34,6 +34,6 @@ let package = Package(
                     .define("EXCLUDED_ARCHS[sdk=*simulator*]", to: "arm64", .when(platforms: [.iOS,.tvOS]))
                 ]
         ),
-        .binaryTarget(name:"MKPlayer" , url: "#ZIPURL#", checksum: "#CHECKSUM#")
+        .binaryTarget(name:"MKPlayer" , url: "https://mkplayer.z13.web.core.windows.net/ios_tvos/MKPlayer-1.7.1-a4.zip", checksum: "480a792c7b81f6566909db72456e94a7752148461652259babe54cc3ef095a0b")
     ]
 )
