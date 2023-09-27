@@ -33,6 +33,6 @@ let package = Package(
                     .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "YES")
                 ]
         ),
-        .binaryTarget(name:"MKPlayer" , url: "#ZIPURL#", checksum: "#CHECKSUM#")
+        .binaryTarget(name:"MKPlayer" , url: "https://mkplayer.z13.web.core.windows.net/ios_tvos/MKPlayer-1.7.1-a6.zip", checksum: "c32ef2a7f736e36fad5f084494474c15dfbb4f8e1d0449c69fb10d3e206d13d8")
     ]
 )
