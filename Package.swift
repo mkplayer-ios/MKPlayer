@@ -17,16 +17,13 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/bitmovin/player-ios.git",
-                    exact:"3.41.2"),
-        .package(url: "https://github.com/bitmovin/bitmovin-analytics-collector-ios",
-                 exact:"3.1.1"),
+                    exact:"3.42.0"),
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.6.0")
     ],
     
     targets: [
         .target(name: "MKPlayerPackage",
                 dependencies: [ .product(name: "BitmovinPlayer", package: "player-ios"),
-                                .product(name: "BitmovinCollector", package: "bitmovin-analytics-collector-ios"),
                                 .product(name: "Alamofire", package: "Alamofire")
                     ],
                 cSettings: [
