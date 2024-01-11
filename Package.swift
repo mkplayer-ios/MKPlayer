@@ -18,7 +18,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/bitmovin/player-ios.git",
-                    exact:"3.49.0"),
+                    exact:"3.53.0"),
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.6.0")
     ],
     
