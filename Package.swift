@@ -18,8 +18,8 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/bitmovin/player-ios.git",
-                    exact:"3.53.0"),
-        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.6.0")
+                    exact:"3.54.0"),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.9.0")
     ],
     
     targets: [
@@ -31,6 +31,6 @@ let package = Package(
                     .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "YES")
                 ]
         ),
-        .binaryTarget(name:"MKPlayer" , url: "https://mkplayer.z13.web.core.windows.net/ios_tvos/MKPlayer-1.16.1.zip", checksum: "e6e0c1f54b633ef50c67a93e2425b34787cf17ffe9cef7576b3f1d1500e0aa7d")
+        .binaryTarget(name:"MKPlayer" , url: "https://mkplayer.z13.web.core.windows.net/ios_tvos/MKPlayer-1.21.0.zip", checksum: "cf022b63ae39ae1ec6046dddd9df4b1e73d5fba073fbd0136f10ef98dc65cc9b")
     ]
 )
