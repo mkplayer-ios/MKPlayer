@@ -18,7 +18,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/bitmovin/player-ios.git",
-                    exact:"3.96.0")
+                    exact:"3.97.1")
     ],
     
     targets: [
