@@ -18,7 +18,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/bitmovin/player-ios.git",
-                    exact:"3.104.0")
+                    exact:"3.111.1")
     ],
     
     targets: [
@@ -30,6 +30,6 @@ let package = Package(
                     .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "YES")
                 ]
         ),
-        .binaryTarget(name:"MKPlayer" , url: "#ZIPURL#", checksum: "#CHECKSUM#")
+        .binaryTarget(name:"MKPlayer" , url: "https://mkplayer.z13.web.core.windows.net/ios_tvos/MKPlayer-1.58.0.zip", checksum: "dd54595d2d7e3efefeec4dd73123f3dff4f53eb6dd70bed5efba56c3c322d26b")
     ]
 )
