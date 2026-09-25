@@ -6,8 +6,8 @@ import PackageDescription
 let package = Package(
     name: "MKPlayer",
     platforms: [
-        .iOS(.v14),
-        .tvOS(.v14),
+        .iOS(.v15),
+        .tvOS(.v15),
         .visionOS(.v1)
     ],
     products: [
@@ -18,7 +18,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/bitmovin/player-ios.git",
-                    exact:"3.111.1")
+                    exact:"3.123.0")
     ],
     
     targets: [
